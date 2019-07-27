@@ -1,0 +1,13 @@
+---
+-
+  hosts: localhost
+  connection: local
+ #name: Execute two commands on web_node1
+ # hosts: web
+  tasks:
+    -
+      name: Execute a date command
+      command: echo date
+    -
+      name: Execute a command to display hosts file
+      command: echo cat /etc/hosts

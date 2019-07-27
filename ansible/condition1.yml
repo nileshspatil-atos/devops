@@ -1,0 +1,8 @@
+---
+-
+   name: Ececute a script on all web nodes
+   hosts: web
+   tasks:
+     -
+       service: name=mysql state=started
+       when: ansible_host=='server4.company.com'

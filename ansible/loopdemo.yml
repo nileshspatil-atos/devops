@@ -1,0 +1,17 @@
+---
+- hosts: localhost
+  connection: local
+
+  vars:
+    fruts:
+      - Apple
+      - Banana
+      - Grapes
+      - Orange
+
+  tasks:
+      - command: echo "{{ item }}"
+        with_items: '{{ fruts }}'
+     
+      - debug: msg="{{ item }}"
+        with_items: '{{ fruts }}'
