@@ -1,0 +1,12 @@
+---
+-
+  name: Execute a script on all web server nodes
+  hosts: all_servers
+  tasks:
+    - debug:
+        msg: "{{ansible_host}}"
+
+    -
+      service: name=mysql state=started
+      when: ansible_host=='52.66.252.153' #'server4.company.com'
+
